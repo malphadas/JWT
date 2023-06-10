@@ -1,5 +1,7 @@
 package com.jwt.jwtauth.Controller;
 
+import java.security.Principal;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +14,8 @@ public class HomeController {
 	}
 
 	@GetMapping("/secured")
-	public String secured(){
-		return "Hello, Secured!";
+	public String secured(Principal principal){
+		return "Hello, " + principal.getName();
 	}
 }
 

@@ -1,13 +1,13 @@
-package com.jwt.jwtauth;
+package com.malpha.jwtauth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JwtauthApplication {
+public class JwtAuthApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JwtauthApplication.class, args);
+		SpringApplication.run(JwtAuthApplication.class, args);
 	}
 
 }

@@ -45,6 +45,7 @@ public class SecurityConfig {
         http = 
         http.csrf(AbstractHttpConfigurer::disable)
         .authorizeHttpRequests(auth->auth
+                .requestMatchers("/api/auth/token").hasRole("USER")
                 .anyRequest().hasAnyAuthority("SCOPE_READ")
         )
         .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))

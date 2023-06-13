@@ -33,8 +33,8 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         return new InMemoryUserDetailsManager(
-                User.withUsername("dvega")
-                        .password("{noop}password")
+                User.withUsername("usuario")
+                        .password("{noop}senha")
                         .authorities("READ","ROLE_USER")
                         .build());
     }
@@ -65,7 +65,7 @@ public class SecurityConfig {
     public JwtDecoder jwtDecoder() {
         byte[] bytes = jwtKey.getBytes();
         SecretKeySpec originalKey = new SecretKeySpec(bytes, 0, bytes.length,"RSA");
-        return NimbusJwtDecoder.withSecretKey(originalKey).macAlgorithm(MacAlgorithm.HS512).build();
+        return NimbusJwtDecoder.withSecretKey(originalKey).macAlgorithm(MacAlgorithm.HS256).build();
     }
 
 }
